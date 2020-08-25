@@ -340,7 +340,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: hidden;
 }
 
@@ -359,18 +359,6 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
-}
-
-.section-title .view-resume{
-  font-size: 15px;
-  font-family: 'Cairo', sans-serif;
-  font-weight: bold;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  float:right;
-  position: relative;
-  padding-top: 22px;
   color: #173b6c;
 }
 
@@ -521,60 +509,22 @@ section {
   border: 2px solid #1f5297;
 }
 
-
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.services .icon-box {
-  margin-bottom: 20px;
+.resume .linkcolor{
+  color: white;
 }
-
-.services .icon {
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 54px;
+.resume button[type="submit"] {
   background: #149ddd;
-  border-radius: 50%;
-  transition: 0.5s;
-  border: 1px solid #149ddd;
+  border: 0;
+  padding: 10px 24px;
+  color: black;
+  transition: 0.4s;
+  border-radius: 4px;
 }
 
-.services .icon i {
-  color: #fff;
-  font-size: 24px;
+.resume button[type="submit"]:hover {
+  background: #37b3ed;
 }
 
-.services .icon-box:hover .icon {
-  background: #fff;
-}
-
-.services .icon-box:hover .icon i {
-  color: #149ddd;
-}
-
-.services .title {
-  margin-left: 80px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.services .title a {
-  color: #343a40;
-}
-
-.services .title a:hover {
-  color: #149ddd;
-}
-
-.services .description {
-  margin-left: 80px;
-  line-height: 24px;
-  font-size: 14px;
-}
 
 /*--------------------------------------------------------------
 # Contact
