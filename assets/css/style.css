@@ -362,6 +362,18 @@ section {
   color: #173b6c;
 }
 
+.section-title .view-resume{
+  font-size: 15px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  float:right;
+  position: relative;
+  padding-top: 22px;
+  color: #173b6c;
+}
+
 .section-title h2::after {
   content: '';
   position: absolute;
