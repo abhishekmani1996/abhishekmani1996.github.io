@@ -378,6 +378,7 @@ section {
   text-align: justify;
 }
 
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -525,7 +526,92 @@ section {
   background: #37b3ed;
 }
 
+/*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+.blog .content h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #173b6c;
+}
 
+.blog-bg {
+  background: white;
+  background-size: cover;
+}
+
+.blog .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog .content ul li {
+  padding-bottom: 10px;
+}
+
+.blog .content ul i {
+  font-size: 20px;
+  padding-right: 2px;
+  color: #149ddd;
+}
+
+.blog .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# BlogChild
+--------------------------------------------------------------*/
+.blogg .content h3 {
+  font-size: 35px;
+  font-family: "Arial";
+}
+
+.blogg .content h5 {
+  font-size: 20px;
+  font-family: "Arial";
+}
+
+.blogg-bg {
+  background: white;
+  background-size: cover;
+}
+
+.blogg .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blogg .content ul li {
+  padding-bottom: 10px;
+}
+
+.blogg .content ul i {
+  font-size: 20px;
+  padding-right: 2px;
+  color: #149ddd;
+}
+
+.blogg .content p:last-child {
+  margin-bottom: 0;
+}
+
+.blogg .blogg-item p {
+ font-size: 17px; line-height: 27px;
+ }
+
+ .blogg .blogg-item .blogimage{
+ text-align: center;
+
+ }
+
+ .blogg .blogg-item .blogimage h6{
+ font-size: 12px;
+ font-family: "Arial";
+ font-style: italic;
+ text-align: center;
+ padding-bottom: 10px;
+ }
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -807,6 +893,13 @@ section {
 canvas{
   display:block;
   vertical-align:bottom;
+}
+
+/* ----- Sharing Blog ----- */
+
+.sharing{
+  padding-top: 50px;
+  float:right;
 }
 
 
