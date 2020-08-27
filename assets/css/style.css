@@ -235,6 +235,47 @@ h1, h2, h3, h4, h5, h6 {
   color: #149ddd;
 }
 
+/*--- Nav Menu for Blogs */
+.nav-menu1 {
+  padding-top: 30px;
+}
+
+.nav-menu1 * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu1 > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu1 a {
+  display: flex;
+  align-items: center;
+  color: #a8a9b4;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.nav-menu1 a i {
+  font-size: 24px;
+  padding-right: 8px;
+  color: #6f7180;
+}
+
+.nav-menu1 a:hover, .nav-menu1 .active > a, .nav-menu1 li:hover > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-menu1 a:hover i, .nav-menu1 .active > a i, .nav-menu1 li:hover > a i {
+  color: #149ddd;
+}
+
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
