@@ -455,15 +455,15 @@ section {
 
 
 /*--------------------------------------------------------------
-# Skills
+# Skills - About
 --------------------------------------------------------------*/
-.skills .progress {
+.about .progress {
   height: 50px;
   display: block;
   background: none;
 }
 
-.skills .progress .skill {
+.about .progress .skill {
   padding: 0;
   margin: 0 0 6px 0;
   text-transform: uppercase;
@@ -473,16 +473,16 @@ section {
   color: #050d18;
 }
 
-.skills .progress .skill .val {
+.about .progress .skill .val {
   float: right;
   font-style: normal;
 }
 
-.skills .progress-bar-wrap {
+.about .progress-bar-wrap {
   background: #dce8f8;
 }
 
-.skills .progress-bar {
+.about .progress-bar {
   width: 1px;
   height: 10px;
   transition: .9s;
