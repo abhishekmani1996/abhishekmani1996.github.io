@@ -786,6 +786,23 @@ section {
   padding-top: 50px;
   float: left;
  }
+
+ .blogg .backbutton button[type="submit"] {
+  background: #149ddd;
+  border: 0;
+  padding: 10px 24px;
+  color: black;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.blogg .backbutton button[type="submit"]:hover {
+  background: #37b3ed;
+}
+
+.blogg .backbutton .linkcolor{
+  color: white;
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
