@@ -28,6 +28,10 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176311706-1"></script>
 <script>
@@ -64,7 +68,11 @@
       <nav class="nav-menu">
         <ul>
           <li><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="index.html#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="index.html#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           <li class="active"><a href="blog.html"><i class="bx bxl-blogger"></i> <span>Blog</span></a></li>
+          <li><a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/abhishekmani'});return false;"><i class="bx bx-calendar"></i> <span>Schedule 1 on 1</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
       <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -77,31 +85,21 @@
     <section id="blog" class="blog blog-bg">
       <div class="container">
         <div class="borderr">
-        <div class="section-title">
-          <h2>Blog</h2>
-            <div class="card-wrapper">
+          <div class="section-title">
+            <h2>Blog</h2>
+          </div>
+          <div class="post-cards-grid">
 
-            <div class="card-cols">
+            <a href="blog1.html" class="post-card" data-aos="fade-up">
+              <img src="assets/img/Blog1/card.jpg" alt="Esoteric Programming Languages" class="post-card-img">
+              <div class="post-card-body">
+                <div class="post-card-meta">Aug 26, 2020 &nbsp;·&nbsp; Programming</div>
+                <div class="post-card-title">The Peculiar Esoteric Programming Languages; BrainFuck and ReverseFuck</div>
+                <span class="post-card-cta">Read More</span>
+              </div>
+            </a>
 
-            <div class="card-col" ontouchstart="this.classList.toggle('hover');">
-                <div class="card-container">
-                    <div class="card-front">
-                        <div class="card-inner">
-                            <p>The Peculiar Esoteric Programming Languages; BrainFuck and ReverseFuck</p>
-                        </div>
-                    </div>
-                    <a href="blog1.html" class="blog1">
-                    <div class="card-back">
-                         <div class="card-inner"><img src="assets/img/Blog1/card.jpg" alt="" class="img-fluid">
-                          <p>Read More</p>
-                        </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-        </div>
-      </div>
-        </div>
+          </div>
         </div>
       </div>
     </section><!-- End blog Section -->
@@ -112,7 +110,7 @@
   <footer id="footer">
     <div class="container">
       <div class="credits">
-        <a>© 2023 Abhishek Mani</a>
+        <a>© 2026 Abhishek Mani</a>
       </div>
     </div>
   </footer>

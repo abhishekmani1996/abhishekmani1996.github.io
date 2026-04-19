@@ -58,28 +58,51 @@
     }
   });
 
-  // Navigation active state on scroll
+  // Navigation active state on scroll (only on pages that have hash-targeted sections in nav)
   var nav_sections = $('section');
   var main_nav = $('.nav-menu, #mobile-nav');
+  var hasHashNav = main_nav.find('a[href^="#"]').length > 0;
 
-  $(window).on('scroll', function() {
-    var cur_pos = $(this).scrollTop() + 10;
+  if (hasHashNav) {
+    $(window).on('scroll', function() {
+      var scrollTop = $(this).scrollTop();
+      var windowHeight = $(this).height();
+      var docHeight = $(document).height();
+      var cur_pos = scrollTop + windowHeight / 2;
+      var matched = false;
 
-    nav_sections.each(function() {
-      var top = $(this).offset().top,
-        bottom = top + $(this).outerHeight();
-
-      if (cur_pos >= top && cur_pos <= bottom) {
-        if (cur_pos <= bottom) {
+      // If at bottom of page, activate last matching section
+      if (scrollTop + windowHeight >= docHeight - 5) {
+        var lastId = nav_sections.last().attr('id');
+        var lastMatch = main_nav.find('a[href="#' + lastId + '"]').parent('li');
+        if (lastMatch.length) {
           main_nav.find('li').removeClass('active');
+          lastMatch.addClass('active');
+          return;
         }
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
       }
-      if (cur_pos < 200) {
-        $(".nav-menu ul:first li:first").addClass('active');
+
+      nav_sections.each(function() {
+        var id = $(this).attr('id');
+        var match = main_nav.find('a[href="#' + id + '"]').parent('li');
+        if (!match.length) return;
+
+        var top = $(this).offset().top,
+          bottom = top + $(this).outerHeight();
+
+        if (cur_pos >= top && cur_pos <= bottom) {
+          main_nav.find('li').removeClass('active');
+          match.addClass('active');
+          matched = true;
+        }
+      });
+
+      if (scrollTop < 200 && main_nav.find('a[href="#hero"]').length) {
+        main_nav.find('li').removeClass('active');
+        main_nav.find('a[href="#hero"]').parent('li').addClass('active');
       }
     });
-  });
+  }
 
   // Back to top button
   $(window).scroll(function() {
