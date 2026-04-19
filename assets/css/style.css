@@ -669,6 +669,10 @@ section {
   padding: 32px;
 }
 
+.project-card + .project-card {
+  margin-top: 28px;
+}
+
 .project-card-header {
   display: flex;
   align-items: flex-start;
