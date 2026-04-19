@@ -1568,19 +1568,31 @@ canvas{
 
 /* --- Tablet and below (sidebar already hidden by existing CSS) --- */
 @media (max-width: 1199px) {
-  /* Hero: remove desktop padding that assumed sidebar offset */
-  #logo {
-    padding-left: 0;
-    display: block;
-    margin: 0 auto 10px auto;
+  /* Prevent hero from overflowing horizontally */
+  #particles-js {
+    overflow: hidden;
   }
+
+  /* SVG logo: override HTML width="654" attribute and desktop padding */
+  #logo {
+    padding-left: 0 !important;
+    width: min(90vw, 500px) !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto 12px auto;
+  }
+
   #hero p {
-    padding-left: 0;
+    padding-left: 0 !important;
     text-align: center;
   }
+
   #hero .hero-container {
     text-align: center;
-    padding: 0 20px;
+    padding: 0 24px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
