@@ -1561,3 +1561,206 @@ canvas{
     transform: rotateY(20deg);
   }
 }
+
+/*--------------------------------------------------------------
+# MOBILE OPTIMIZATIONS
+--------------------------------------------------------------*/
+
+/* --- Tablet and below (sidebar already hidden by existing CSS) --- */
+@media (max-width: 1199px) {
+  /* Hero: remove desktop padding that assumed sidebar offset */
+  #logo {
+    padding-left: 0;
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+  #hero p {
+    padding-left: 0;
+    text-align: center;
+  }
+  #hero .hero-container {
+    text-align: center;
+    padding: 0 20px;
+  }
+}
+
+/* --- Mobile landscape / large phones --- */
+@media (max-width: 991px) {
+  section {
+    padding: 30px 0;
+  }
+
+  /* About: center profile image */
+  .about .col-lg-4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Resume: stack columns already handled by Bootstrap col-lg-* */
+  .resume .resume-item {
+    text-align: left;
+  }
+
+  /* Contact: reduce excessive bottom padding */
+  .contact {
+    padding-bottom: 40px;
+  }
+
+  /* Blog post card: go full width when grid wraps */
+  .post-card {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  /* Blog1: sharing section clear float */
+  .sharing {
+    float: none;
+    padding-top: 20px;
+    text-align: left;
+  }
+}
+
+/* --- Phone portrait --- */
+@media (max-width: 767px) {
+  /* Hero: scale SVG logo down so it fits the screen */
+  #logo {
+    width: 90vw;
+    height: auto;
+    max-width: 500px;
+  }
+
+  #hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  #hero .hero-container {
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* Section headings */
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  /* About section */
+  .about .col-lg-4 img {
+    width: 100px;
+  }
+
+  /* Resume tweaks */
+  .resume .resume-title {
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 12px;
+  }
+
+  .resume .resume-item h4 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .resume .resume-item h5 {
+    font-size: 13px;
+  }
+
+  /* Contact map: ensure it doesn't overflow */
+  .contact iframe {
+    height: 260px;
+  }
+
+  /* Blog post card: truly full-width */
+  .post-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .post-cards-grid {
+    gap: 1rem;
+  }
+
+  /* Blog1: article text sizing */
+  .blogg .post-header h3 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .blogg .blogg-item p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* Blog1: footer row — stack back button and share vertically */
+  .blogg .row.align-items-center {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .blogg .col-text-right {
+    text-align: left !important;
+  }
+
+  /* Back-to-top button: move above mobile nav toggle */
+  .back-to-top {
+    bottom: 70px;
+  }
+}
+
+/* --- Small phones --- */
+@media (max-width: 575px) {
+  #logo {
+    width: 85vw;
+  }
+
+  #hero p {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 24px 0;
+  }
+
+  .section-title {
+    padding-bottom: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+  }
+
+  /* Resume: tighter spacing */
+  .resume .resume-item {
+    padding: 0 0 14px 14px;
+  }
+
+  .resume .resume-item ul {
+    padding-left: 14px;
+  }
+
+  /* Contact info cards */
+  .contact .info {
+    padding: 20px;
+  }
+
+  .contact .info h4 {
+    font-size: 18px;
+    padding-left: 50px;
+  }
+
+  .contact .info p {
+    padding-left: 50px;
+    font-size: 13px;
+  }
+
+  /* Blog1: post header */
+  .blogg .post-header h3 {
+    font-size: 18px;
+  }
+
+  .blogg .post-header {
+    margin-bottom: 1.25rem;
+  }
+}
