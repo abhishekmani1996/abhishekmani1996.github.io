@@ -43,6 +43,15 @@
     }
   });
 
+  $('.calendly-link').on('click', function(e) {
+    if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+      e.preventDefault();
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/abhishekmani'
+      });
+    }
+  });
+
   $(document).on('click', '.mobile-nav-toggle', function(e) {
     $('body').toggleClass('mobile-nav-active');
     $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
@@ -121,18 +130,61 @@
   });
 
   // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
+  if ($.fn.counterUp && $('[data-toggle="counter-up"]').length) {
+    $('[data-toggle="counter-up"]').counterUp({
+      delay: 10,
+      time: 1000
+    });
+  }
+
+  // Resume accordion timeline
+  $('.resume-accordion-trigger').on('click', function() {
+    var item = $(this).closest('.resume-experience-item');
+    var isOpen = item.hasClass('is-open');
+
+    item.toggleClass('is-open', !isOpen);
+    $(this).attr('aria-expanded', String(!isOpen));
   });
 
-  // Skills section
-  $('.skills-content').waypoint(function() {
-    $('.progress .progress-bar').each(function() {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, {
-    offset: '80%'
+  // Project case study modals
+  var lastProjectTrigger = null;
+
+  $('[data-project-modal]').on('click', function() {
+    var modalId = $(this).data('project-modal') + '-modal';
+    var modal = $('#' + modalId);
+
+    if (!modal.length) return;
+
+    lastProjectTrigger = this;
+    modal.removeAttr('hidden');
+    $('body').addClass('project-modal-open');
+    modal.find('.project-modal-close').focus();
+  });
+
+  $('[data-project-modal-close]').on('click', function() {
+    var modal = $(this).closest('.project-modal');
+
+    modal.attr('hidden', true);
+    $('body').removeClass('project-modal-open');
+
+    if (lastProjectTrigger) {
+      lastProjectTrigger.focus();
+    }
+  });
+
+  $(document).on('keydown', function(e) {
+    if (e.key !== 'Escape') return;
+
+    var modal = $('.project-modal:not([hidden])');
+
+    if (!modal.length) return;
+
+    modal.attr('hidden', true);
+    $('body').removeClass('project-modal-open');
+
+    if (lastProjectTrigger) {
+      lastProjectTrigger.focus();
+    }
   });
 
   // Initi AOS
